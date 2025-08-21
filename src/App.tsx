@@ -14,12 +14,12 @@ const App = () => {
         <GridItem area={"nav"}><NavBar /></GridItem>
 
         {showAside && (
-          <GridItem area={"aside"} bg={"yellow"}>Aside</GridItem>
+          <GridItem area={"aside"} >Aside</GridItem>
         )}
        
-        <GridItem area={"main"} bg={"whiteAlpha.700"}><GameGrid/></GridItem>
+        <GridItem area={"main"} ><GameGrid/></GridItem>
 
-        <GridItem area={"footer"} bg={"red.400"}>Footer</GridItem>
+        <GridItem area={"footer"} >Footer</GridItem>
 
       </Grid>
     </>
