@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <>
       <HStack>
-        <Image src={logo} boxSize="60px" />
+        <Image src={logo} height={{ base: "40px", md: "50px", lg: "60px" }} />
        
         <Text fontSize="5xl" color="yellow.500">Game Explorer</Text>
       </HStack>
