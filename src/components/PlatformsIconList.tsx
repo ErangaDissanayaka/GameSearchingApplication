@@ -1,9 +1,8 @@
 import { FaWindows, FaPlaystation, FaXbox, FaApple, FaLinux, FaAndroid } from 'react-icons/fa'
 import { SiNintendo } from 'react-icons/si'
 import { BsGlobe } from 'react-icons/bs'
-import { HStack, Icon, Text } from '@chakra-ui/react';
+import { HStack, Icon } from '@chakra-ui/react';
 import type { Platform } from '../hooks/useGames'
-import type { Key } from 'react';
 import type { IconType } from 'react-icons';
 
 interface PlatformsIconListProps {
