@@ -1,21 +1,26 @@
 import {Button, MenuContent, MenuItem, MenuRoot, MenuTrigger } from '@chakra-ui/react'
 import usePlatforms from '../../hooks/usePlatforms'
+import type { Platform } from '../../hooks/usePlatforms';
 
-const PlatformSelector = () => {
+interface PlatformSelectorProps{
+  onSelectedPlatform : (platfrm:Platform) => void
+  selectedPlatform : Platform | null
+}
+const PlatformSelector = ({onSelectedPlatform, selectedPlatform }: PlatformSelectorProps) => {
 
     const {data , errors} = usePlatforms();
     if(errors) return null; 
   return (
     <MenuRoot>
-        <MenuTrigger asChild>
+        <MenuTrigger asChild width={"20%"}>
             <Button variant={'outline'} size={'lg'}>
-                Platform Selector
+                {selectedPlatform ? selectedPlatform.name : "Select platform"}
             </Button>
         </MenuTrigger>
 
         <MenuContent width={'20%'} overflow={'auto'} position={'absolute'} zIndex={8}>
           {data.map((platform) => (
-            <MenuItem value={platform.name}>{platform.name}</MenuItem>
+            <MenuItem onClick={()=> onSelectedPlatform(platform)} value={platform.name}>{platform.name}</MenuItem>
           ))
           }
         </MenuContent>

@@ -1,7 +1,6 @@
-import { use } from "react"
 import useData from "./Data"
 
-interface Platform{
+export interface Platform{
     id: number,
     name: string,
     slug: string
