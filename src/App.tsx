@@ -7,10 +7,12 @@ import { useState } from "react"
 import PlatformSelector from "./components/ui/PlatformSelector"
 import type { Platform } from "./hooks/usePlatforms"
 
+export interface GameQuery{
+  genre: Genre | null
+  platform: Platform | null
+}
 const App = () => {
-  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null)
-  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null)
-
+  const [GameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
   const showAside = useBreakpointValue({ base: false, lg: true })
 
   return (
@@ -35,8 +37,8 @@ const App = () => {
             scrollbarWidth: "none"
           }}>
             <GenreList
-              onSelectedGenre={(genre: Genre) => setSelectedGenre(genre)}
-              selectedGenre={selectedGenre}
+              onSelectedGenre={(genre: Genre) => setGameQuery({ ...GameQuery, genre })}
+              selectedGenre={GameQuery.genre}
             />
           </GridItem>
         )}
@@ -44,9 +46,9 @@ const App = () => {
         <GridItem area={"main"} paddingY={5} >
 
           <PlatformSelector  
-          selectedPlatform = {selectedPlatform}
-          onSelectedPlatform={(platform)=> setSelectedPlatform(platform)}/>
-          <GameGrid selectedGenre={selectedGenre} selectedPlatform={selectedPlatform}/>
+          selectedPlatform ={GameQuery.platform}
+          onSelectedPlatform={(platform)=> setGameQuery({ ...GameQuery, platform })}/>
+          <GameGrid gameQuery={GameQuery}/>
         </GridItem>
 
         <GridItem area={"footer"} bg={"brown"} w={"full"}>
