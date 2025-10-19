@@ -12,7 +12,7 @@ const PlatformSelector = ({onSelectedPlatform, selectedPlatform }: PlatformSelec
     if(errors) return null; 
   return (
     <MenuRoot>
-        <MenuTrigger asChild width={"20%"}>
+        <MenuTrigger asChild width={{base:"100%", md:"20%"}} >
             <Button variant={'outline'} size={'lg'}>
                 {selectedPlatform ? selectedPlatform.name : "Select platform"}
             </Button>

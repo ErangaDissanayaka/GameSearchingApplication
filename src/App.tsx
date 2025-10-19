@@ -6,6 +6,7 @@ import type { Genre } from "./hooks/UseGenre"
 import { useState } from "react"
 import PlatformSelector from "./components/ui/PlatformSelector"
 import type { Platform } from "./hooks/usePlatforms"
+import SearchInput from "./components/ui/SearchInput"
 
 export interface GameQuery{
   genre: Genre | null
@@ -22,7 +23,17 @@ const App = () => {
         lg: `"nav nav" "aside main" "footer footer"`
       }}>
 
-        <GridItem area={"nav"} position="sticky" top={0} zIndex={1} bg={"black"}><NavBar /></GridItem>
+        <GridItem 
+          alignItems={"center"}
+          area={"nav"} 
+          position="sticky" 
+          top={0} 
+          zIndex={1} 
+          bg={"black"}
+          >
+          <NavBar />
+          
+        </GridItem>
 
         {showAside && (
           <GridItem
