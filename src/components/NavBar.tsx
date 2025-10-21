@@ -10,10 +10,10 @@ const NavBar = ({onSearch}:NavBarProps) => {
   <>
   <HStack
   gapX={{ base: 2, md: 100 }}
-  width="100%">
+  width="100%" bg={"blackAlpha.800"} paddingX={{ base: 1, md: 1 }}>
 
   <Image src={logo} height={{ base: "40px", md: "50px", lg: "60px" }} />
-
+  
   <Text
     fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
     fontFamily="serif"

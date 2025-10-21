@@ -7,6 +7,8 @@ import { useState } from "react"
 import PlatformSelector from "./components/ui/PlatformSelector"
 import type { Platform } from "./hooks/usePlatforms"
 import GameHeading from "./components/ui/GameHeading"
+import Footer from "./components/ui/footer"
+
 
 export interface GameQuery{
   genre: Genre | null;
@@ -63,8 +65,8 @@ const App = () => {
           <GameGrid gameQuery={GameQuery}/>
         </GridItem>
 
-        <GridItem area={"footer"} bg={"brown"} w={"full"}>
-          <Box w={"full"} textAlign={"center"} p={4}>Footer</Box>
+        <GridItem area={"footer"}  w={"full"}>
+          <Box w={"full"} textAlign={"center"} ><Footer /></Box>
         </GridItem>
           
       </Grid>
