@@ -6,6 +6,7 @@ import type { Genre } from "./hooks/UseGenre"
 import { useState } from "react"
 import PlatformSelector from "./components/ui/PlatformSelector"
 import type { Platform } from "./hooks/usePlatforms"
+import GameHeading from "./components/ui/GameHeading"
 
 export interface GameQuery{
   genre: Genre | null;
@@ -55,7 +56,7 @@ const App = () => {
         )}
 
         <GridItem area={"main"} paddingY={5} >
-
+          <GameHeading gameQuery={GameQuery}/>
           <PlatformSelector  
           selectedPlatform ={GameQuery.platform}
           onSelectedPlatform={(platform)=> setGameQuery({ ...GameQuery, platform })}/>
