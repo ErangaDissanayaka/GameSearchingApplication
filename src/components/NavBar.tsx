@@ -2,7 +2,10 @@ import logo from '../assets/Logo.webp'
 import { HStack,Image,Text } from '@chakra-ui/react'
 import SearchInput from './ui/SearchInput'
 
-const NavBar = () => {
+interface NavBarProps{
+  onSearch : (searchText: string) => void;
+}
+const NavBar = ({onSearch}:NavBarProps) => {
   return (
   <>
   <HStack
@@ -20,7 +23,7 @@ const NavBar = () => {
     Game Explorer
   </Text>
 
-  <SearchInput />
+  <SearchInput onSearch={onSearch}/>
 </HStack>
 
 

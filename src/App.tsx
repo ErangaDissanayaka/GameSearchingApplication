@@ -6,11 +6,11 @@ import type { Genre } from "./hooks/UseGenre"
 import { useState } from "react"
 import PlatformSelector from "./components/ui/PlatformSelector"
 import type { Platform } from "./hooks/usePlatforms"
-import SearchInput from "./components/ui/SearchInput"
 
 export interface GameQuery{
-  genre: Genre | null
-  platform: Platform | null
+  genre: Genre | null;
+  platform: Platform | null;
+  searchText: string; 
 }
 const App = () => {
   const [GameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
@@ -30,10 +30,10 @@ const App = () => {
           top={0} 
           zIndex={1} 
           bg={"black"}
-          >
-          <NavBar />
+        >
+          <NavBar onSearch={(searchText: string) => setGameQuery({...GameQuery, searchText})} />
           
-        </GridItem>
+        </GridItem> 
 
         {showAside && (
           <GridItem
